@@ -16,13 +16,14 @@ public class TowerController : MonoBehaviour
     {
         if(TargetDirection != Vector2.zero)
         {
-            Body.velocity = TargetDirection * 5.0f;
+            Body.velocity = TargetDirection * 3.0f;
+            this.transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)TargetDirection);
+            TargetDirection = Vector2.zero;
         }
     }
 
     void Update()
     {
-        TargetDirection = Vector2.zero;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Body.velocity = Body.velocity + Vector2.right * 5.0f;
