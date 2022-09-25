@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
         transform.Translate(dir * speed * Time.deltaTime, Space.Self);
         
-        if(Vector3.Distance(transform.position, target.position) > 0.4f)
+        if(Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             if(waypointIndex != gameManager.GetComponent<WaypointsManager>().Waypoints.Length - 1)
             {
