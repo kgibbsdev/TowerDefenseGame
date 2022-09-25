@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3416436385779120433}
   - component: {fileID: 3416436385779120432}
   - component: {fileID: 3416436385779120431}
+  - component: {fileID: 1231106311}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  TowerCamera: {fileID: 0}
 --- !u!50 &3416436385779120432
 Rigidbody2D:
   serializedVersion: 4
@@ -85,6 +87,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1231106311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3416436385779120430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f95e6113d8acd44e9ddabf29ab70097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Transparency: 0
+  BaseMaterial:
+  - {fileID: 3416436386664123547}
+  - {fileID: 3416436386434623329}
 --- !u!1 &3416436386434623263
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +235,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5fd6967088aea2d4793b7cd96f6d95a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +257,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.024207853, g: 0.111808255, b: 0.754717, a: 1}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

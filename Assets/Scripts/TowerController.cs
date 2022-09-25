@@ -36,7 +36,7 @@ public class TowerController : MonoBehaviour
         {
             Vector3 temp = TowerCamera.ScreenToWorldPoint(Input.mousePosition);
             temp.z = 0;
-            this.transform.position = temp;
+            //this.transform.position = temp;
         }
         else {
             TowerTimer.Tick();
