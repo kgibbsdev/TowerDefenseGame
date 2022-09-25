@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Timer))]
+[RequireComponent(typeof(Placeable))]
 public class TowerController : MonoBehaviour
 {
     public GameObject Target;
+
     private Vector2 TargetDirection = Vector2.zero;
     private Rigidbody2D Body;
     private Timer TowerTimer = new Timer();
+    private Placeable TowerPlaceable;
+    public Camera TowerCamera;
+
+    private void Awake()
+    {
+        Body = this.GetComponent<Rigidbody2D>();
+        TowerPlaceable = this.GetComponent<Placeable>();
+    }
 
     void Start()
     {
         TowerTimer.Callback = MoveTower;
-        Body = this.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -22,7 +32,16 @@ public class TowerController : MonoBehaviour
 
     void Update()
     {
-        TowerTimer.Tick();
+        if (TowerPlaceable.IsCarried)
+        {
+            Vector3 temp = TowerCamera.ScreenToWorldPoint(Input.mousePosition);
+            temp.z = 0;
+            //this.transform.position = temp;
+        }
+        else {
+            TowerTimer.Tick();
+            this.transform.position = this.transform.position;
+        }
     }
 
     private void MoveTower()
