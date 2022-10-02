@@ -5,8 +5,15 @@ using UnityEngine;
 public class TowerSpawner : MonoBehaviour
 {
     public List<GameObject> TowerPrefabs;
+    private GameObject SelectedPrefab;
+    public EconomyManager GoldManager;
     public GameObject Target;
     public Camera MainCamera;
+
+    private void Awake()
+    {
+        SelectedPrefab = TowerPrefabs[0];
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +28,17 @@ public class TowerSpawner : MonoBehaviour
         {
             Vector3 towerLocation = MainCamera.ScreenToWorldPoint(Input.mousePosition);
             towerLocation.z = 0;
-            PlaceTower(towerLocation);
+            if (GoldManager.CanAfford(1)) { PlaceTower(towerLocation); GoldManager.Spend(1); }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SelectedPrefab = TowerPrefabs[0];
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectedPrefab = TowerPrefabs[1];
         }
     }
 
@@ -29,7 +46,7 @@ public class TowerSpawner : MonoBehaviour
 
     public void PlaceTower(Vector3 location)
     {
-        GameObject tempGo = GameObject.Instantiate(TowerPrefabs[0]);
+        GameObject tempGo = GameObject.Instantiate(SelectedPrefab);
         TowerController tempController = tempGo.GetComponent<TowerController>();
         tempController.Target = Target;
         tempController.TowerCamera = MainCamera;

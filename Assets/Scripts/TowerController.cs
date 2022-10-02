@@ -13,11 +13,13 @@ public class TowerController : MonoBehaviour
     private Timer TowerTimer = new Timer();
     private Placeable TowerPlaceable;
     public Camera TowerCamera;
+    public float FireFrequency;
 
     private void Awake()
     {
         Body = this.GetComponent<Rigidbody2D>();
         TowerPlaceable = this.GetComponent<Placeable>();
+        TowerTimer.Frequency = FireFrequency;
     }
 
     void Start()
@@ -46,7 +48,8 @@ public class TowerController : MonoBehaviour
 
     private void MoveTower()
     {
-        TargetDirection = (Vector2)(Target?.transform.position - this.transform.position);
+        if (Target == null) return;
+        TargetDirection = (Vector2)(Target.transform.position - this.transform.position);
         TargetDirection.Normalize();
         Body.velocity = TargetDirection * 3.0f;
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)TargetDirection);
