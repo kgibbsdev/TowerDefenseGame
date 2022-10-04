@@ -33,12 +33,12 @@ public class Placeable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            isCarried = true;
-        } else if (Input.GetMouseButtonUp(0))
+            isCarried = !isCarried;
+        } else if (Input.GetKeyUp(KeyCode.P))
         {
-            isCarried = false;
+            //isCarried = false;
         }
     }
 
