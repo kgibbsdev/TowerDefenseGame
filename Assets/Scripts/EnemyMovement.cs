@@ -41,6 +41,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
+                gameManager.GetComponent<PlayerLivesManager>().Lives--;
                 Destroy(gameObject);
             }
            
