@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveCollection>
+  <Wave>
+    <EnemyPack>
+			<Type>1</Type>
+      <EnemyCount>10</EnemyCount>
+    </EnemyPack>
+	  <EnemyPack>
+		  <Type>2</Type>
+		  <EnemyCount>4</EnemyCount>
+	  </EnemyPack>
+  </Wave>
+</WaveCollection>
