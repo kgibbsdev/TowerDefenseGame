@@ -10,14 +10,13 @@ public enum TowerType
 
 public static class TowerFactoryBuilder
 {
-
-    public static Tower BuildTower(TowerType type, Rigidbody2D body)
+    public static Tower BuildTower(TowerScriptable TowerInfo, Rigidbody2D body)
     {
-        switch (type)
+        switch (TowerInfo.Type)
         {
             case TowerType.CANNON:
                 CannonController cannon = new CannonController(body);
-                cannon.FireFrequency = 3.0f;
+                cannon.FireFrequency = TowerInfo.BaseSpeed;
                 return cannon;
             case TowerType.MINI_CANNON:
                 CannonController minicannon = new CannonController(body);
@@ -26,5 +25,4 @@ public static class TowerFactoryBuilder
             default: return null;
         }
     }
-
 }

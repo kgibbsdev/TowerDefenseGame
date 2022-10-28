@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Placeable))]
 public class TowerController : MonoBehaviour
 {
-    public GameObject Target;
-
     private Placeable TowerPlaceable;
-    public TowerType TType;
     private Tower MyTower;
+    public GameObject Target;
     public Camera TowerCamera;
+    public TowerScriptable TowerInfo;
 
     private void Awake()
     {
         Rigidbody2D Body = this.GetComponent<Rigidbody2D>();
         TowerPlaceable = this.GetComponent<Placeable>();
-        MyTower = TowerFactoryBuilder.BuildTower(TType, Body);
+        MyTower = TowerFactoryBuilder.BuildTower(TowerInfo, Body);
     }
 
     void Start()
