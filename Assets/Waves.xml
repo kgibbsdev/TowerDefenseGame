@@ -2,12 +2,28 @@
 <WaveCollection>
   <Wave>
     <EnemyPack>
-			<Type>1</Type>
-      <EnemyCount>10</EnemyCount>
+      <Type>1</Type>
+      <EnemyCount>3</EnemyCount>
     </EnemyPack>
-	  <EnemyPack>
-		  <Type>2</Type>
-		  <EnemyCount>4</EnemyCount>
-	  </EnemyPack>
+    <EnemyPack>
+      <Type>2</Type>
+      <EnemyCount>1</EnemyCount>
+    </EnemyPack>
+    <EnemyPack>
+      <Type>1</Type>
+      <EnemyCount>3</EnemyCount>
+    </EnemyPack>
+    <EnemyPack>
+      <Type>2</Type>
+      <EnemyCount>1</EnemyCount>
+    </EnemyPack>
+    <EnemyPack>
+      <Type>1</Type>
+      <EnemyCount>3</EnemyCount>
+    </EnemyPack>
+    <EnemyPack>
+      <Type>2</Type>
+      <EnemyCount>1</EnemyCount>
+    </EnemyPack>
   </Wave>
 </WaveCollection>

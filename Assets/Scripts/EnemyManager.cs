@@ -36,12 +36,12 @@ public class EnemyManager : MonoBehaviour
     {
       waveCollection = (WaveCollection)xmlSerializer.Deserialize(fileStream);
     }
-    catch(Exception ex)
+    catch (Exception ex)
     {
       throw ex;
-		}
+    }
     Debug.Log("Waves Imported");
-	}
+  }
 
   private void BeginWave(int waveNumber)
   {
@@ -49,14 +49,14 @@ public class EnemyManager : MonoBehaviour
     {
       StartCoroutine(SpawnEnemies(ep));
     }
-	}
+  }
 
   private IEnumerator SpawnEnemies(EnemyPack ep)
   {
     Debug.Log("SpawnEnemies");
     if (ep.Type == 1)
     {
-      for (int i = 0; i <= ep.EnemyCount; i++)
+      for (int i = 0; i < ep.EnemyCount; i++)
       {
         var enemy = Instantiate(Enemy1Prefab);
         enemy.transform.position = spawnPoint.position + new Vector3(0, 1, 0);
@@ -65,7 +65,7 @@ public class EnemyManager : MonoBehaviour
     }
     if (ep.Type == 2)
     {
-      for (int i = 0; i <= ep.EnemyCount; i++)
+      for (int i = 0; i < ep.EnemyCount; i++)
       {
         var enemy = Instantiate(Enemy2Prefab);
         enemy.transform.position = spawnPoint.position;
