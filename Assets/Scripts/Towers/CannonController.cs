@@ -8,7 +8,9 @@ public class CannonController : Tower
     private Timer TowerTimer = new Timer();
     public float FireFrequency = 3.0f;
 
-    public CannonController(Rigidbody2D rb) : base(rb) { }
+    public CannonController(Rigidbody2D rb, TowerScriptable scriptable) : base(rb, scriptable) {
+        FireFrequency = scriptable.BaseSpeed;
+    }
 
     public override void TowerStart()
     {

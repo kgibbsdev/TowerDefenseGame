@@ -13,16 +13,20 @@ public class TowerController : MonoBehaviour
     public Camera TowerCamera;
     public TowerScriptable TowerInfo;
 
+    public void PassTower(Tower tower)
+    {
+        MyTower = tower;
+        MyTower.TowerStart();
+    }
+
     private void Awake()
     {
         Rigidbody2D Body = this.GetComponent<Rigidbody2D>();
         TowerPlaceable = this.GetComponent<Placeable>();
-        MyTower = TowerFactoryBuilder.BuildTower(TowerInfo, Body);
     }
 
     void Start()
     {
-        MyTower.TowerStart();
     }
 
     private void FixedUpdate()
@@ -39,6 +43,7 @@ public class TowerController : MonoBehaviour
             this.transform.position = temp;
         }
         else {
+            if (MyTower == null) return;
             MyTower.Target = Target;
             MyTower.TowerUpdate();
         }
