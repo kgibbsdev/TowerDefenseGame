@@ -1,23 +1,20 @@
 using UnityEngine;
 
-public class CannonController : Tower
+public class CannonTower : TowerController
 {
     private Timer TowerTimer = new Timer();
+    private Vector2 TargetDirection = Vector2.zero;
     public float FireFrequency = 3.0f;
-
-    public CannonController(Rigidbody2D rb, TowerScriptable scriptable) : base(rb, scriptable)
+    protected override void TowerStart()
     {
-        FireFrequency = scriptable.BaseSpeed;
-    }
-
-    public override void TowerStart()
-    {
+        base.TowerStart();
         TowerTimer.Frequency = FireFrequency;
         TowerTimer.Callback = CannonMove;
     }
 
-    public override void TowerUpdate()
+    protected override void TowerUpdate()
     {
+        base.TowerUpdate();
         TowerTimer.Tick();
     }
 

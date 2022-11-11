@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3416436385779120434}
-  - component: {fileID: 3416436385779120433}
   - component: {fileID: 3416436385779120432}
   - component: {fileID: 3416436385779120431}
   - component: {fileID: 1231106311}
+  - component: {fileID: -6754038959639645535}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -36,21 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3416436385779120433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3416436385779120430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702a2f539b7db6e47b9879b801fdeb31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  TowerCamera: {fileID: 0}
-  FireFrequency: 3
 --- !u!50 &3416436385779120432
 Rigidbody2D:
   serializedVersion: 4
@@ -104,6 +89,22 @@ MonoBehaviour:
   BaseMaterial:
   - {fileID: 3416436386664123547}
   - {fileID: 3416436386434623329}
+--- !u!114 &-6754038959639645535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3416436385779120430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e10a2c20d869d14bb70a632dbf49f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  TowerCamera: {fileID: 0}
+  TowerInfo: {fileID: 0}
+  FireFrequency: 3
 --- !u!1 &3416436386434623263
 GameObject:
   m_ObjectHideFlags: 0

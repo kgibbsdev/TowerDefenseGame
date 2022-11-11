@@ -1,40 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
+// Todo: possibly implement a tower fixed update
+
+/// <summary>
+/// Base class for towers. Implements buying/dragging functionality.
+/// <para>To create a new tower, please inherit from this and implement TowerStart and TowerUpdate.</para>
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Placeable))]
 public class TowerController : MonoBehaviour
 {
     private Placeable TowerPlaceable;
-    private Tower MyTower;
+    protected Rigidbody2D Body;
     public GameObject Target;
     public Camera TowerCamera;
-    public TowerScriptable TowerInfo;
 
-    public void PassTower(Tower tower)
-    {
-        MyTower = tower;
-        MyTower.TowerStart();
-    }
+    protected virtual void TowerStart() { }
+    protected virtual void TowerUpdate() { }
 
-    private void Awake()
+    protected void Awake()
     {
-        Rigidbody2D Body = this.GetComponent<Rigidbody2D>();
+        Body = this.GetComponent<Rigidbody2D>();
         TowerPlaceable = this.GetComponent<Placeable>();
     }
 
-    void Start()
+    protected void Start()
     {
+        TowerStart();
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
-    void Update()
+    protected void Update()
     {
         if (TowerPlaceable.IsCarried)
         {
@@ -42,10 +37,9 @@ public class TowerController : MonoBehaviour
             temp.z = 0;
             this.transform.position = temp;
         }
-        else {
-            if (MyTower == null) return;
-            MyTower.Target = Target;
-            MyTower.TowerUpdate();
+        else
+        {
+            TowerUpdate();
         }
     }
 }

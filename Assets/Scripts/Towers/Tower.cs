@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete]
 abstract public class Tower
 {
     protected Rigidbody2D Body;

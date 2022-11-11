@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,19 +23,19 @@ public class TowerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector3 towerLocation = MainCamera.ScreenToWorldPoint(Input.mousePosition);
             towerLocation.z = 0;
             if (GoldManager.CanAfford(1)) { PlaceTower(towerLocation); GoldManager.Spend(1); }
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SelectedPrefab = TowerPrefabs[0];
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SelectedPrefab = TowerPrefabs[1];
         }
@@ -50,7 +49,7 @@ public class TowerSpawner : MonoBehaviour
         Rigidbody2D body = tempGo.GetComponent<Rigidbody2D>();
         Tower temp = TowerFactoryBuilder.BuildTower(SelectedPrefab, body);
         TowerController tempController = tempGo.GetComponent<TowerController>();
-        tempController.PassTower(temp);
+        //tempController.PassTower(temp);
         tempController.Target = Target;
         tempController.TowerCamera = MainCamera;
         tempGo.transform.position = location;
