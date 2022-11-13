@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour
 {
-    public List<TowerScriptable> TowerPrefabs;
-    private TowerScriptable SelectedPrefab;
+    public List<GameObject> TowerPrefabs;
+    private GameObject SelectedPrefab;
     public EconomyManager GoldManager;
     public GameObject Target;
     public Camera MainCamera;
@@ -45,11 +45,9 @@ public class TowerSpawner : MonoBehaviour
 
     public void PlaceTower(Vector3 location)
     {
-        GameObject tempGo = GameObject.Instantiate(SelectedPrefab.Prefab);
+        GameObject tempGo = GameObject.Instantiate(SelectedPrefab);
         Rigidbody2D body = tempGo.GetComponent<Rigidbody2D>();
-        Tower temp = TowerFactoryBuilder.BuildTower(SelectedPrefab, body);
         TowerController tempController = tempGo.GetComponent<TowerController>();
-        //tempController.PassTower(temp);
         tempController.Target = Target;
         tempController.TowerCamera = MainCamera;
         tempGo.transform.position = location;

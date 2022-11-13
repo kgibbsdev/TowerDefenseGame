@@ -1,22 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonTower : TowerController
+public class RolloTower : TowerController
 {
-    private Timer TowerTimer = new Timer();
+    public float MoveSpeed = 3.0f;
     private Vector2 TargetDirection = Vector2.zero;
-    public float FireFrequency = 3.0f;
+
     protected override void TowerStart()
     {
-        TowerTimer.Frequency = FireFrequency;
-        TowerTimer.Callback = CannonMove;
+
     }
 
     protected override void TowerUpdate()
-    {
-        TowerTimer.Tick();
-    }
-
-    private void CannonMove()
     {
         TargetDirection = (Vector2)(Target.transform.position - Body.transform.position);
         TargetDirection.Normalize();

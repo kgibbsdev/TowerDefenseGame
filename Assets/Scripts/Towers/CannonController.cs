@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Obsolete]
 public class CannonController : Tower
 {
     private Timer TowerTimer = new Timer();
