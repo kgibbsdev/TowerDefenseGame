@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: ca8ae1ba560a4fd499a36c392d7a926a
+  - enabled: 1
+    path: Assets/Scenes/Tower_Spawning.unity
+    guid: 90b8656779e53ec4ebde79a096ca1814
   m_configObjects: {}
