@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete]
 abstract public class Tower
 {
     protected Rigidbody2D Body;
@@ -9,7 +8,7 @@ abstract public class Tower
     public int Cost = 1;
     public GameObject Target; // Perhaps make a parameter passed in tower update?
 
-    public Tower(Rigidbody2D rb)
+    public Tower(Rigidbody2D rb, TowerScriptable scriptable)
     {
         Body = rb;
     }

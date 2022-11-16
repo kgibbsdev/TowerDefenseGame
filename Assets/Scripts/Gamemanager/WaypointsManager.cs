@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointsManager : MonoBehaviour
@@ -8,12 +6,12 @@ public class WaypointsManager : MonoBehaviour
     public GameObject[] Waypoints;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

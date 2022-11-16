@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EconomyManager : MonoBehaviour
@@ -9,13 +7,13 @@ public class EconomyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public bool CanAfford(int val)
@@ -25,7 +23,7 @@ public class EconomyManager : MonoBehaviour
 
     public void Spend(int val)
     {
-        if(CanAfford(val))
+        if (CanAfford(val))
         {
             Gold -= val;
         }

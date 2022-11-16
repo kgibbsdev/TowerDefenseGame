@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -16,13 +14,13 @@ public class EnemyMovement : MonoBehaviour
 
         gameManager = GameObject.Find("Gamemanager");
 
-        if(gameManager == null)
+        if (gameManager == null)
         {
             throw new System.Exception("Game Manager not found!");
         }
 
-       target = gameManager.GetComponent<WaypointsManager>().Waypoints[waypointIndex].transform;
-        
+        target = gameManager.GetComponent<WaypointsManager>().Waypoints[waypointIndex].transform;
+
     }
 
     // Update is called once per frame
@@ -31,10 +29,10 @@ public class EnemyMovement : MonoBehaviour
         Vector3 dir = (target.position - transform.position).normalized;
 
         transform.Translate(dir * speed * Time.deltaTime, Space.Self);
-        
-        if(Vector3.Distance(transform.position, target.position) <= 0.4f)
+
+        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
-            if(waypointIndex != gameManager.GetComponent<WaypointsManager>().Waypoints.Length - 1)
+            if (waypointIndex != gameManager.GetComponent<WaypointsManager>().Waypoints.Length - 1)
             {
                 waypointIndex++;
                 target = gameManager.GetComponent<WaypointsManager>().Waypoints[waypointIndex].transform;
@@ -44,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
                 gameManager.GetComponent<PlayerLivesManager>().Lives--;
                 Destroy(gameObject);
             }
-           
+
         }
 
     }

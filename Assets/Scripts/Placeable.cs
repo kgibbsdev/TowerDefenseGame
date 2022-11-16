@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,8 @@ public class Placeable : MonoBehaviour
     public int Transparency;
     public bool IsCarried
     {
-        get {
+        get
+        {
             return isCarried;
         }
         set
@@ -17,7 +17,8 @@ public class Placeable : MonoBehaviour
             if (value)
             {
                 SetTransparent();
-            } else
+            }
+            else
             {
                 SetSolid();
             }
@@ -33,10 +34,11 @@ public class Placeable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             isCarried = !isCarried;
-        } else if (Input.GetKeyUp(KeyCode.P))
+        }
+        else if (Input.GetKeyUp(KeyCode.P))
         {
             //isCarried = false;
         }
