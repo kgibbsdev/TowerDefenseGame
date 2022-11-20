@@ -7,8 +7,10 @@
     </EnemyPack>
     <EnemyPack>
       <Type>2</Type>
-      <EnemyCount>1</EnemyCount>
+      <EnemyCount>3</EnemyCount>
     </EnemyPack>
+  </Wave>
+  <Wave>
     <EnemyPack>
       <Type>1</Type>
       <EnemyCount>3</EnemyCount>
@@ -17,6 +19,8 @@
       <Type>2</Type>
       <EnemyCount>1</EnemyCount>
     </EnemyPack>
+  </Wave>
+  <Wave>
     <EnemyPack>
       <Type>1</Type>
       <EnemyCount>3</EnemyCount>
