@@ -1,6 +1,7 @@
 using UnityEngine;
 
 // Todo: possibly implement a tower fixed update
+// Todo: possibly store the towers initial spawn, and reset the tower each round
 
 /// <summary>
 /// Base class for towers. Implements buying/dragging functionality.
