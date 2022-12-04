@@ -17,11 +17,11 @@ public class PlayerLivesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //LivesCounterText.text = $"Lives: {Lives}";
+        LivesCounterText.text = $"Lives: {Lives}";
 
-        //if (Lives < 1)
-        //{
-        //    GameStateText.text = "YOU LOSE";
-        //}
+        if (Lives < 1)
+        {
+            GameStateText.text = "YOU LOSE";
+        }
     }
 }
