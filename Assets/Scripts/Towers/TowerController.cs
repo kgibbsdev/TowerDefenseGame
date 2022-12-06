@@ -43,4 +43,9 @@ public class TowerController : MonoBehaviour
             TowerUpdate();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Target = collision.gameObject ?? Target;
+    }
 }

@@ -15,7 +15,7 @@ public class Timer
         if (CurrentTime >= Frequency)
         {
             CurrentTime = 0.0f;
-            Callback();
+            if(Callback != null) Callback();
         }
     }
 }
